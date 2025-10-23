@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Betel Cultivation Management</title>
+    <!-- Add icon to the tab -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.png') }}"
+      type="image/png"
+    />
+    <!-- Import the external CSS files -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/common_style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/community_forum_styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/navbar_footer_styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/success_error_messages_styles.css') }}"
+    />
+    <!-- Import Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body
+    data-success-message="{{ get_flashed_messages(category_filter=['success']) | safe }}"
+    data-error-message="{{ get_flashed_messages(category_filter=['error']) | safe }}"
+  >
+    <div class="wrapper">
+      <!-- Include Navbar -->
+      {% include 'navbar.html' %}
+
+      <!-- Message Container -->
+      <div id="message-container"></div>
+
+      <div class="community-forum-container">
+        <!-- Left Side: Filters -->
+        <div class="filters-section">
+          <h3>Filter Posts</h3>
+
+          <!-- First Group: Sort By -->
+          <div class="filter-group" id="sort-filters">
+            <h5>Sort By</h5>
+            <ul>
+              <li>
+                <a data-sort="latest"
+                  ><i class="fa fa-check-circle-o"></i> Latest</a
+                >
+              </li>
+              <li>
+                <a href="#" data-sort="most-liked"
+                  ><i class="fa fa-check-circle-o"></i> Most Liked</a
+                >
+              </li>
+              <li>
+                <a data-sort="most-commented"
+                  ><i class="fa fa-check-circle-o"></i> Most Commented</a
+                >
+              </li>
+              <li>
+                <a data-sort="oldest"
+                  ><i class="fa fa-check-circle-o"></i> Oldest</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Second Group: Scope -->
+          <div class="filter-group" id="scope-filters">
+            <h5>Scope</h5>
+            <ul>
+              <li>
+                <a data-scope="all"><i class="fa fa-check-circle-o"></i> All</a>
+              </li>
+              <li>
+                <a data-scope="own"><i class="fa fa-check-circle-o"></i> Own</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Middle Side: Posts Display -->
+        <div class="posts-section">
+          <div id="posts-container">
+            <!-- Posts will be dynamically added here -->
+          </div>
+        </div>
+
+        <!-- Right Side: Create Post -->
+        <div class="create-post-section">
+          <h3>Create a Post</h3>
+          <form id="create-post-form">
+            <input type="text" id="post-title" placeholder="Title" />
+            <textarea
+              id="post-description"
+              placeholder="Description"
+            ></textarea>
+            <div class="image-upload-container">
+              <label for="post-image" class="image-upload-label">
+                <i class="far fa-file-image"></i>
+                <span>Upload a photo</span>
+              </label>
+              <input
+                type="file"
+                id="post-image"
+                accept="image/*"
+                style="display: none"
+              />
+              <div class="image-preview" id="image-preview"></div>
+            </div>
+            <button type="submit" id="post-submit">Add Post</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Include Footer -->
+      {% include 'footer.html' %}
+    </div>
+
+    <!-- Import the external JS file -->
+    <script>
+      const currentUserId = "{{ session['user_id'] }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/community_forum.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+  </body>
+</html>

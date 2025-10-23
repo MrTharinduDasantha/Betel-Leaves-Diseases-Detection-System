@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Betel Cultivation Management</title>
+    <!-- Add icon to the tab -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.png') }}"
+      type="image/png"
+    />
+    <!-- Import the external CSS files -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/common_style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/consult_officer_styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/navbar_footer_styles.css') }}"
+    />
+    <!-- Import Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Import Socket.IO client -->
+    <script
+      src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+      integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Include Navbar -->
+      {% include 'navbar.html' %}
+
+      <div class="consult-officer-container">
+        <!-- Left Side: Users List -->
+        <div class="users-section">
+          <div class="tabs">
+            <div class="tab active" data-tab="farmers">Farmers</div>
+            <div class="tab" data-tab="officers">Officers</div>
+          </div>
+          <div class="users-list" id="users-list">
+            <!-- Users will be dynamically loaded here -->
+          </div>
+        </div>
+
+        <!-- Middle Side: Chat Area -->
+        <div class="chat-section">
+          <div class="chat-messages" id="chat-messages">
+            <div class="start-chat-message">
+              <div class="text-animation" id="start-chat-animation">
+                Start Your Conversation
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-container">
+            <input
+              type="text"
+              id="message-input"
+              placeholder="Write a message"
+            />
+            <label for="image-upload" class="image-upload-label">
+              <i class="fa fa-file-image-o"></i>
+            </label>
+            <input
+              type="file"
+              id="image-upload"
+              accept="image/*"
+              style="display: none"
+            />
+            <div id="image-preview" class="image-preview"></div>
+            <div class="vertical-divider"></div>
+            <button id="send-button">
+              <i class="fa fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Side: Profile Info -->
+        <div class="profile-section">
+          <div class="profile-info">
+            <img
+              src="{{ user.profile_pic }}"
+              alt="{{ user.name }}"
+              class="profile-pic"
+            />
+            <h3>{{ user.name }}</h3>
+            <p>{{ user.email }}</p>
+            <div class="role-badge">
+              {% if user.role == 'admin' %} Officer {% else %} Farmer {% endif
+              %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete Confirmation Popup -->
+      <div class="delete-popup" id="delete-popup">
+        <div class="delete-popup-content">
+          <p id="delete-popup-message">
+            Are you sure you want to delete this message?
+          </p>
+          <div class="delete-popup-buttons">
+            <button class="cancel-btn" id="cancel-delete-btn">Cancel</button>
+            <button class="delete-btn" id="confirm-delete-btn">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Include Footer -->
+      {% include 'footer.html' %}
+    </div>
+
+    <!-- Import the external JS file -->
+    <script>
+      const currentUserId = "{{ session['user_id'] }}";
+      const currentUserRole = "{{ user.role }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/consult_officer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+  </body>
+</html>

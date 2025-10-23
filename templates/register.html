@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Betel Cultivation Management</title>
+    <!-- Add icon to the tab -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.png') }}"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/common_style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/auth_styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/success_error_messages_styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body
+    data-success-message="{{ get_flashed_messages(category_filter=['success']) | safe }}"
+    data-error-message="{{ get_flashed_messages(category_filter=['error']) | safe }}"
+  >
+    <!-- Message Container -->
+    <div id="message-container"></div>
+
+    <!-- Register Form -->
+    <div class="wrapper">
+      <form
+        method="POST"
+        action="{{ url_for('auth.register') }}"
+        enctype="multipart/form-data"
+      >
+        <h2>Register</h2>
+        <!-- Profile Picture Upload -->
+        <div class="profile-pic-upload">
+          <label for="profile_pic">
+            <i class="fas fa-user-circle" id="profile-icon"></i>
+          </label>
+          <input
+            type="file"
+            name="profile_pic"
+            id="profile_pic"
+            accept="image/*"
+            style="display: none"
+            onchange="previewImage(event)"
+          />
+          <div class="profile-pic-container">
+            <img
+              id="profile-preview"
+              src="#"
+              alt="Profile Preview"
+              style="display: none"
+            />
+            <i
+              class="fas fa-times remove-icon"
+              id="remove-icon"
+              style="display: none"
+              onclick="removeImage()"
+            ></i>
+          </div>
+          <p>Upload a profile picture</p>
+        </div>
+        <!-- Name -->
+        <div class="input-field">
+          <input type="text" name="name" autocomplete="off" />
+          <label>Enter your name</label>
+        </div>
+        <!-- Email -->
+        <div class="input-field">
+          <input type="email" name="email" autocomplete="off" />
+          <label>Enter your email</label>
+        </div>
+        <!-- Password -->
+        <div class="input-field password-field">
+          <input
+            type="password"
+            name="password"
+            id="register-password"
+            autocomplete="off"
+          />
+          <label>Enter your password</label>
+          <i class="fas fa-eye" id="toggle-register-password"></i>
+        </div>
+        <!-- Role Selection -->
+        <div class="role-selection">
+          <label>
+            <i class="far fa-check-circle" id="admin-icon"></i>
+            <span>Agriculture Officer</span>
+          </label>
+          <label>
+            <i class="far fa-check-circle" id="user-icon"></i>
+            <span>Farmer</span>
+          </label>
+          <input type="hidden" name="role" id="role" value="" />
+        </div>
+        <!-- Submit Button -->
+        <button type="submit">Register</button>
+        <div class="register">
+          <p>
+            <i
+              >Already have an account?
+              <a href="{{ url_for('auth.login') }}">Login</a></i
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+  </body>
+</html>

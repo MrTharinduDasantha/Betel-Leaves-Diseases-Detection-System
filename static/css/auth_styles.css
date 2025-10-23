@@ -1,0 +1,240 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+  background: url("../images/login_register_page_background_image.jpg")
+    no-repeat center center/cover;
+}
+
+.wrapper {
+  width: 400px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.1);
+  margin: 30px 0;
+  max-width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.input-field {
+  position: relative;
+  border-bottom: 2px solid #000;
+  margin: 15px 0;
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #000;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.input-field input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #000;
+}
+
+.input-field input:focus ~ label,
+.input-field input.has-content ~ label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field i {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+}
+
+.space {
+  height: 20px;
+}
+.fa-user-circle {
+  font-size: 80px;
+  color: #000;
+}
+
+.profile-pic-container {
+  position: relative;
+  display: inline-block;
+}
+
+.remove-icon {
+  position: absolute;
+  font-size: 12px;
+  top: 6px;
+  right: 4px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic-upload img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: none;
+}
+
+.profile-pic-upload p {
+  font-size: 14px;
+  color: #000;
+  margin-top: 12px;
+}
+
+.upload-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000;
+}
+
+.role-selection {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  color: #000;
+}
+
+.role-selection label {
+  display: flex;
+  align-items: center;
+}
+
+.role-selection i {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+button {
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 3px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  color: #000;
+  border-color: #fff;
+  background: #fff;
+}
+
+.register {
+  text-align: center;
+  margin-top: 30px;
+  color: #000;
+}
+
+.register p {
+  font-style: italic;
+}
+
+.register a {
+  color: #000;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 350px;
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .input-field input {
+    font-size: 15px;
+  }
+
+  .role-selection {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    width: 300px;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .input-field {
+    margin: 12px 0;
+  }
+
+  .input-field input {
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .input-field label {
+    font-size: 14px;
+  }
+
+  .fa-user-circle {
+    font-size: 70px;
+  }
+
+  .profile-pic-upload img {
+    width: 80px;
+    height: 80px;
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}

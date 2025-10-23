@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Betel Cultivation Management</title>
+    <!-- Add icon to the tab -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.png') }}"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/common_style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/about_styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/navbar_footer_styles.css') }}"
+    />
+    <!-- Import Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Include Navbar -->
+    {% include 'navbar.html' %}
+
+    <!-- About Section -->
+    <div class="about-container">
+      <div class="about-content">
+        <!-- Left side - Image -->
+        <div class="about-image">
+          <img
+            src="{{ url_for('static', filename='images/about_img.jpg') }}"
+            alt="Betel Leaf Cultivation"
+          />
+        </div>
+
+        <!-- Right side - Content -->
+        <div class="about-text">
+          <h2>Betel Leaf Diseases Detection System</h2>
+
+          <!-- Project Description -->
+          <div class="about-section">
+            <h3>Project Overview</h3>
+            <p>
+              The Betel Leaf Diseases Detection System is a comprehensive
+              platform designed to assist farmers and agricultural officers in
+              the management of betel leaf cultivation. Users can register as
+              either an admin (Agricultural Officer) or a user (Farmer) to
+              access various features of the system.
+            </p>
+            <p>
+              Our system allows users to identify betel leaf diseases through
+              our advanced AI model, providing detailed solutions including
+              Disease Identification, Symptoms, Treatment Methods, and
+              Preventative Measures. Information about maintaining healthy betel
+              cultivation is also available, with administrators having the
+              ability to update these solutions as needed.
+            </p>
+            <p>
+              Beyond disease identification, our platform offers additional
+              features such as a Community Forum where farmers can share
+              cultivation challenges and experiences, a Consult Officer section
+              for direct communication with agricultural experts, and a
+              Cultivation Guide with comprehensive instructions for betel
+              farming.
+            </p>
+          </div>
+
+          <!-- Dataset Description -->
+          <div class="about-section">
+            <h3>Dataset Information</h3>
+            <p>
+              Our disease detection model is trained on a specialized dataset of
+              betel leaf images, categorizing them into four distinct
+              conditions: healthy, dried, afflicted by bacterial disease, and
+              suffering from fungal brown spot disease. Captured in Camperhat,
+              Raipur, Lakshmipur, Bangladesh, this collection demonstrates a
+              meticulous approach to data gathering for disease identification.
+            </p>
+            <p>
+              The dataset contains 3589 images organized into Original (1000
+              images) and Augmented (2589 images) folders. The Augmented folder
+              is further divided into training (2388 images) and testing (201
+              images) subsets, designed to support both deep learning and
+              machine learning algorithms for precise classification of betel
+              leaf health conditions.
+            </p>
+            <a
+              href="https://data.mendeley.com/datasets/g7fpgj57wc/2"
+              target="_blank"
+              class="dataset-btn"
+            >
+              View Dataset <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <!-- Team Information -->
+          <div class="about-section">
+            <h3>Our Team</h3>
+            <p>
+              This website was created as a final year project at SLTC Research
+              University by:
+            </p>
+            <div class="team-info">
+              <div class="team-members">
+                <h4>Developers:</h4>
+                <ul>
+                  <li>Tharidu Dasantha</li>
+                  <li>Chandoopa Wepola</li>
+                </ul>
+              </div>
+              <div class="team-supervisors">
+                <h4>Supervisors:</h4>
+                <ul>
+                  <li>Mr. Isuru Supasan Naotunna (Supervisor)</li>
+                  <li>Ms. Buddhima Lakchani (Co-supervisor)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include Footer -->
+    {% include 'footer.html' %}
+
+    <!-- JavaScript Files -->
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+  </body>
+</html>

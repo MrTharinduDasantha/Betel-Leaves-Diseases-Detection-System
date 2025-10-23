@@ -1,0 +1,10 @@
+Flask
+tensorflow
+pymongo
+Werkzeug
+Pillow
+flask-socketio 
+eventlet
+cloudinary 
+python-dotenv
+beautifulsoup4

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Betel Cultivation Management</title>
+    <!-- Add icon to the tab -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.png') }}"
+      type="image/png"
+    />
+    <!-- Add icon to the tab -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.png') }}"
+      type="image/png"
+    />
+    <!-- Import the external CSS files -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/common_style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/disease_detection_styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/success_error_messages_styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/navbar_footer_styles.css') }}"
+    />
+    <!-- Import Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Import Quill CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
+      rel="stylesheet"
+    />
+    <!-- Import Quill JS -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+  </head>
+  <body
+    data-success-message="{{ get_flashed_messages(category_filter=['success']) | safe }}"
+    data-error-message="{{ get_flashed_messages(category_filter=['error']) | safe }}"
+  >
+    <div class="wrapper">
+      <!-- Include Navbar -->
+      {% include 'navbar.html' %}
+
+      <!-- Message Container -->
+      <div id="message-container"></div>
+
+      <!-- Two-column container -->
+      <div class="container-flex">
+        <!-- Left Column: Betel Leaf Disease Detection Section -->
+        <div class="left-column">
+          <h3 class="section-title">Betel Leaf Disease Detection</h3>
+          <!-- File Upload & Prediction Form -->
+          <form
+            method="POST"
+            action="{{ url_for('disease_detection.disease_detection') }}"
+            enctype="multipart/form-data"
+          >
+            <!-- Hidden file input -->
+            <input
+              type="file"
+              name="file"
+              id="fileInput"
+              accept="image/*"
+              hidden
+            />
+            <!-- Custom file upload section -->
+            <div
+              class="file-upload-section"
+              onclick="document.getElementById('fileInput').click()"
+            >
+              <i class="fa fa-leaf"></i>
+              <span>Upload a betel leaf image and predict</span>
+            </div>
+            <!-- Image preview section -->
+            <div id="imagePreviewContainer" class="image-preview-container">
+              <img id="imagePreview" src="#" alt="Image Preview" hidden />
+              <i
+                class="fas fa-trash"
+                id="removeImage"
+                onclick="removeImage()"
+                hidden
+              ></i>
+            </div>
+            <button type="submit" id="uploadPredictBtn">
+              Upload and Predict
+            </button>
+            <img
+              id="loadingAnimation"
+              class="loading-animation"
+              src="{{ url_for('static', filename='images/loading_animation.gif') }}"
+              alt="Loading Animation"
+            />
+          </form>
+
+          <!-- Display Result and Suggested Solution for Normal Users -->
+          {% if prediction %}
+          <div class="result">
+            <h3 class="section-result">Result</h3>
+            <p>Predicted: {{ prediction }}</p>
+            <h3 class="section-solution">Suggested Solution</h3>
+            <p>{{ solution|safe }}</p>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Right Column: Conditional Content -->
+        <div class="right-column">
+          {% if user and user.role == 'admin' %}
+          <!-- Admin: Add/Update Solution Section -->
+          <div class="admin-solution-form">
+            <h3 class="section-title">Add/Update Solution</h3>
+            <h5 class="section-subtitle">Select Category</h5>
+            <div class="category-container">
+              {% for category in class_labels %}
+              <div class="category-icon" data-category="{{ category }}">
+                <i class="fa fa-check-circle-o"></i>
+                <label>{{ category }}</label>
+              </div>
+              {% endfor %}
+            </div>
+            <form
+              id="adminSolutionForm"
+              method="POST"
+              action="{{ url_for('disease_detection.update_solution') }}"
+            >
+              <!-- Hidden input to store the selected category -->
+              <input type="hidden" name="disease" id="diseaseInput" />
+              <!-- Quill editor container -->
+              <div id="editor" style="height: 200px"></div>
+              <!-- Hidden input to store the Quill editor's HTML content -->
+              <input type="hidden" name="solution" id="solution" />
+              <!-- The submit button will change text based on the loaded solution -->
+              <button type="submit" id="solutionSubmitBtn" class="submit-btn">
+                Save Solution
+              </button>
+            </form>
+          </div>
+          {% else %}
+          <!-- Normal User: Instructions for Disease Detection -->
+          <div class="instructions">
+            <h3 class="section-title">
+              Instructions for Betel Leaf Disease Detection
+            </h3>
+            <!-- Top Row: Step 1 & Step 2 -->
+            <div class="card-row">
+              <div class="instruction-card">
+                <img
+                  src="{{ url_for('static', filename='images/Step 1 - Take an Image.png') }}"
+                  alt="Step 1"
+                />
+                <h4>Step 1</h4>
+                <p>
+                  Take an image of a diseased or healthy betel leaf using a
+                  camera.
+                </p>
+              </div>
+              <div class="instruction-card">
+                <img
+                  src="{{ url_for('static', filename='images/Step 2 - Upload the image.png') }}"
+                  alt="Step 2"
+                />
+                <h4>Step 2</h4>
+                <p>Upload the image using the form on the left.</p>
+              </div>
+            </div>
+            <!-- Bottom Row: Step 3 & Step 4 -->
+            <div class="card-row">
+              <div class="instruction-card">
+                <img
+                  src="{{ url_for('static', filename='images/Step 3 - Wait for the prediction.png') }}"
+                  alt="Step 3"
+                />
+                <h4>Step 3</h4>
+                <p>
+                  Wait for the prediction and the suggested solution to appear.
+                </p>
+              </div>
+              <div class="instruction-card">
+                <img
+                  src="{{ url_for('static', filename='images/Step 4 - Follow the suggested solution.png') }}"
+                  alt="Step 4"
+                />
+                <h4>Step 4</h4>
+                <p>Follow the suggested solution if a disease is detected.</p>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Include Footer -->
+      {% include 'footer.html' %}
+    </div>
+
+    <!-- Pass the get solution URL as a global JS variable -->
+    <script>
+      const getSolutionUrl =
+        "{{ url_for('disease_detection.get_solution', disease='') }}";
+    </script>
+    <!-- Import external JS files -->
+    <script src="{{ url_for('static', filename='js/disease_detection.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+  </body>
+</html>

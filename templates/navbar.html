@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Betel Cultivation Management</title>
+    <!-- Add icon to the tab -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.png') }}"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/navbar_footer_styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="navbar-left">
+        <a href="{{ url_for('dashboard.dashboard') }}" class="logo-container">
+          <img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            alt="Logo"
+            class="logo"
+          />
+          <span class="logo-text">BETEL</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Icon -->
+      <div class="mobile-menu-icon" id="mobile-menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="navbar-center">
+        <a
+          href="{{ url_for('disease_detection.disease_detection') }}"
+          class="{% if request.path == url_for('disease_detection.disease_detection') %}active{% endif %}"
+          >Disease Detection</a
+        >
+        <a
+          href="{{ url_for('cultivation_guide.cultivation_guide') }}"
+          class="{% if request.path == url_for('cultivation_guide.cultivation_guide') %}active{% endif %}"
+          >Cultivation Guide</a
+        >
+        <a
+          href="{{ url_for('about.about') }}"
+          class="{% if request.path == url_for('about.about') %}active{% endif %}"
+          >About Us</a
+        >
+        <a
+          href="{{ url_for('community_forum.community_forum') }}"
+          class="{% if request.path == url_for('community_forum.community_forum') %}active{% endif %}"
+          >Community Forum</a
+        >
+        <a
+          href="{{ url_for('consult_officer.consult_officer') }}"
+          class="{% if request.path == url_for('consult_officer.consult_officer') %}active{% endif %}"
+          >Consult Officer</a
+        >
+      </div>
+
+      <!-- Bell Icon, Profile Pic, and Dropdown -->
+      <div class="navbar-right">
+        <div class="notification-container">
+          <i class="fas fa-bell icon" id="notification-icon"></i>
+          <span class="notification-count" id="notification-count"></span>
+          <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">
+              <h3>Notifications</h3>
+              <button id="clear-notifications">Clear All</button>
+            </div>
+            <div class="notification-list" id="notification-list">
+              <!-- Notifications will be added here dynamically -->
+            </div>
+          </div>
+        </div>
+        <img
+          src="{{ session['profile_pic'] }}"
+          alt="Profile Picture"
+          class="profile-pic"
+        />
+        <i
+          class="fas fa-chevron-circle-up dropdown-icon"
+          id="dropdown-icon"
+        ></i>
+        <div class="dropdown-content" id="dropdown-content">
+          <p class="welcome-message">
+            Hello {% if session['role'] == 'admin' %} Agriculture Officer {%
+            else %} Farmer {% endif %} {{ user.name }}
+          </p>
+          <div class="dropdown-buttons">
+            <a href="#" id="edit-profile-btn" class="edit-profile-button">
+              <i class="fas fa-pencil-square-o"></i>
+              <span>EDIT PROFILE</span>
+            </a>
+            <a href="{{ url_for('auth.logout') }}" class="logout-button">
+              <i class="fas fa-sign-out"></i>
+              <span>LOGOUT</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal" id="edit-profile-modal">
+      <div class="modal-content">
+        <h3>Edit Your Profile</h3>
+
+        <!-- Profile Picture Section -->
+        <div class="profile-pic-edit-container">
+          <img
+            id="edit-profile-pic"
+            src="{{ session['profile_pic'] }}"
+            alt="Profile Picture"
+            class="edit-profile-pic"
+          />
+          <label for="edit-profile-pic-input" class="edit-pic-icon-label">
+            <i class="fas fa-pencil-square-o edit-pic-icon"></i>
+          </label>
+          <input
+            type="file"
+            id="edit-profile-pic-input"
+            accept="image/*"
+            style="display: none"
+          />
+        </div>
+
+        <!-- Edit Form -->
+        <form id="edit-profile-form">
+          <div class="form-group">
+            <label for="edit-name">Name</label>
+            <input type="text" id="edit-name" name="name" autocomplete="off" />
+          </div>
+
+          <div class="form-group">
+            <label for="edit-email">Email</label>
+            <input
+              type="email"
+              id="edit-email"
+              name="email"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="edit-password">Password</label>
+            <div class="password-field">
+              <input
+                type="password"
+                id="edit-password"
+                name="password"
+                autocomplete="off"
+              />
+              <i class="fas fa-eye" id="toggle-edit-password"></i>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" id="cancel-edit-btn">Cancel</button>
+            <button type="submit" id="update-btn">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav-menu" id="mobile-nav-menu">
+      <a
+        href="{{ url_for('disease_detection.disease_detection') }}"
+        class="{% if request.path == url_for('disease_detection.disease_detection') %}active{% endif %}"
+        >Disease Detection</a
+      >
+      <a
+        href="{{ url_for('cultivation_guide.cultivation_guide') }}"
+        class="{% if request.path == url_for('cultivation_guide.cultivation_guide') %}active{% endif %}"
+        >Cultivation Guide</a
+      >
+      <a
+        href="{{ url_for('about.about') }}"
+        class="{% if request.path == url_for('about.about') %}active{% endif %}"
+        >About Us</a
+      >
+      <a
+        href="{{ url_for('community_forum.community_forum') }}"
+        class="{% if request.path == url_for('community_forum.community_forum') %}active{% endif %}"
+        >Community Forum</a
+      >
+      <a
+        href="{{ url_for('consult_officer.consult_officer') }}"
+        class="{% if request.path == url_for('consult_officer.consult_officer') %}active{% endif %}"
+        >Consult Officer</a
+      >
+    </div>
+
+    <!-- Mobile Notification Dropdown -->
+    <div class="mobile-notification-dropdown" id="mobile-notification-dropdown">
+      <div class="notification-header">
+        <h3>Notifications</h3>
+        <button id="mobile-clear-notifications">Clear All</button>
+      </div>
+      <div class="notification-list" id="mobile-notification-list">
+        <!-- Notifications will be added here dynamically -->
+      </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script>
+      const currentUserId = "{{ session['user_id'] }}";
+      const defaultProfilePic =
+        "{{ url_for('static', filename='images/default_profile.png') }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+  </body>
+</html>

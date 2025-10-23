@@ -1,0 +1,522 @@
+/* General Styles */
+body {
+  height: 100%;
+  background-color: #e0f5ca;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cultivation-guide-container {
+  width: 95%;
+  margin: 65px auto 40px;
+  padding: 20px;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.section-title {
+  font-size: 18px;
+  color: #5b9120;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-filter-section {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar-wrapper {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #5b9120;
+  box-shadow: 0 0 4px rgba(91, 145, 32, 0.2);
+}
+
+.search-btn {
+  background-color: #5b9120;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn:hover {
+  background-color: #4a7a1a;
+}
+
+.favourite-filter-btn {
+  background-color: #fff;
+  color: #5b9120;
+  border: 2px solid #5b9120;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.favourite-filter-btn:hover {
+  background-color: #f0f8e8;
+}
+
+.favourite-filter-btn.active {
+  background-color: #5b9120;
+  color: #fff;
+}
+
+.favourite-filter-btn i {
+  font-size: 16px;
+}
+
+.favourite-text {
+  display: inline;
+}
+
+.section-title {
+  font-size: 18px;
+  color: #5b9120;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Admin View Styles */
+.admin-view {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.guides-display,
+.guide-editor {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Guides List Styles */
+#guides-list {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.guide-item {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #5b9120;
+}
+
+.guide-item h4 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.guide-content {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.guide-content img {
+  max-width: 300px;
+  display: block;
+  height: auto;
+  border-radius: 4px;
+  margin: 10px auto;
+}
+
+.guide-content p {
+  margin-bottom: 10px;
+}
+
+.guide-content ul,
+.guide-content ol {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.guide-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 12px;
+  color: #666;
+}
+
+.guide-author {
+  font-style: italic;
+}
+
+.guide-reactions {
+  display: flex;
+  align-items: center;
+}
+
+.reaction-btn {
+  background: none;
+  border: none;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+.reaction-btn:hover {
+  color: #e74c3c;
+}
+
+.reaction-btn i.fa-heart {
+  color: #e74c3c;
+}
+
+.reaction-count {
+  font-size: 12px;
+}
+
+.guide-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.edit-guide-btn,
+.delete-guide-btn {
+  background-color: #5b9120;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  transition: background-color 0.3s;
+}
+
+.delete-guide-btn {
+  background-color: #d9534f;
+}
+
+.edit-guide-btn:hover {
+  background-color: #4a7a1a;
+}
+
+.delete-guide-btn:hover {
+  background-color: #c9302c;
+}
+
+.no-guides {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Editor Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#editor-container {
+  margin-bottom: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#editor {
+  height: 300px;
+  background-color: #fff;
+}
+
+#editor img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.ql-toolbar.ql-snow {
+  border: 1px solid #ccc;
+  border-radius: 4px 4px 0 0;
+}
+
+.ql-container.ql-snow {
+  border: 1px solid #ccc;
+  border-radius: 0 0 4px 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#save-btn,
+#cancel-btn {
+  background-color: #5b9120;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+#cancel-btn {
+  background-color: #6c757d;
+}
+
+#save-btn:hover {
+  background-color: #4a7a1a;
+}
+
+#cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Farmer View Styles */
+.farmer-view {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.guides-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.guide-title {
+  color: #5b9120;
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-content h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#cancel-delete,
+#confirm-delete {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+}
+
+#cancel-delete {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+#confirm-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+#cancel-delete:hover {
+  background-color: #e0e0e0;
+}
+
+#confirm-delete:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .admin-view {
+    flex-direction: column-reverse;
+  }
+
+  .guides-display,
+  .guide-editor {
+    width: 100%;
+  }
+
+  #editor {
+    height: 250px;
+  }
+
+  .search-filter-section {
+    flex-direction: column;
+  }
+
+  .search-bar-wrapper {
+    width: 100%;
+  }
+
+  .favourite-filter-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cultivation-guide-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .guide-item {
+    padding: 10px;
+  }
+
+  .guide-actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .edit-guide-btn,
+  .delete-guide-btn {
+    width: 100%;
+  }
+
+  .search-filter-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar-wrapper {
+    width: 100%;
+  }
+
+  .favourite-filter-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .favourite-text {
+    display: none;
+  }
+
+  .favourite-filter-btn {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 16px;
+  }
+
+  #editor {
+    height: 200px;
+  }
+
+  .search-filter-section {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .search-input {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .search-btn {
+    padding: 8px 12px;
+  }
+
+  .favourite-filter-btn {
+    padding: 8px;
+    font-size: 13px;
+  }
+}

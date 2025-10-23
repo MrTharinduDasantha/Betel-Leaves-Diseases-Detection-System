@@ -1,0 +1,395 @@
+body {
+  height: 100%;
+  background-color: #e0f5ca;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Container for left and right columns */
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 95%;
+  margin: 85px auto 40px;
+  padding: 0;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: none;
+  gap: 20px;
+}
+
+.container-flex .section-title {
+  text-align: center;
+  font-size: 18px;
+  color: #5b9120;
+}
+
+/* Left and Right Columns */
+.left-column,
+.right-column {
+  width: 48%;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.right-column {
+  padding: 0 30px;
+}
+
+.right-column .section-subtitle {
+  font-size: 15px;
+  text-align: left;
+  margin-top: 8px;
+  color: #333;
+}
+
+/* Form styling */
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* File upload section */
+.file-upload-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border: 2px dashed #333;
+  border-radius: 8px;
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.file-upload-section:hover {
+  background-color: #f0f8e8;
+}
+
+/* Image preview container */
+.image-preview-container {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  margin: 20px auto;
+}
+
+#imagePreview {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Remove image icon */
+#removeImage {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #5b9120;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#removeImage:hover {
+  background-color: #4a7a1a;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.loading-animation {
+  margin: 0 auto;
+}
+
+#loadingAnimation {
+  display: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #5b9120;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #4a7a1a;
+}
+
+/* Result Section */
+.result {
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* Instructions Section for Normal Users */
+.instructions {
+  text-align: left;
+  padding-top: 20px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 25px;
+}
+
+.instruction-card {
+  flex: 0 0 45%;
+  text-align: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #333;
+}
+
+.instruction-card img {
+  width: 25%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.instruction-card h4 {
+  margin: 5px 0;
+  color: #5b9120;
+}
+
+.instruction-card p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Admin solution form */
+.result {
+  margin: 0;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.result li[data-list="bullet"] {
+  list-style-type: disc;
+  margin-left: 40px;
+}
+
+.result li[data-list="ordered"] {
+  list-style-type: decimal;
+  margin-left: 40px;
+}
+
+.result .section-result {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #5b9120;
+}
+
+.result p {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.result .section-solution {
+  font-size: 18px;
+  text-align: center;
+  color: #5b9120;
+}
+
+.admin-solution-form {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.admin-solution-form .section-subtitle {
+  font-size: 15px;
+  text-align: left;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+}
+
+/* Category icons */
+.category-icon {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 10px;
+  margin: 12px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.category-icon:hover {
+  color: #4a7a1a;
+}
+
+.category-icon i {
+  color: #333;
+}
+
+.category-icon i.fa-check-circle {
+  color: #4a7a1a;
+}
+
+.admin-solution-form,
+input[type="radio"] {
+  color: #333;
+  font-size: 14px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #333;
+  border-radius: 3px;
+}
+
+.submit-btn {
+  margin: 20px 0;
+  display: block;
+  margin-left: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .container-flex {
+    margin-top: 85px;
+  }
+
+  .container-flex .section-title {
+    font-size: 16px;
+  }
+
+  .instruction-card img {
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-flex {
+    flex-direction: column;
+    margin-top: 85px;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .card-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .instruction-card {
+    flex: 0 0 100%;
+  }
+
+  .instruction-card img {
+    width: 20%;
+  }
+
+  .category-container {
+    grid-template-columns: 1fr;
+  }
+
+  #message-container {
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-flex {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 10px;
+  }
+
+  .left-column,
+  .right-column {
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .file-upload-section {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .instruction-card {
+    padding: 10px;
+  }
+
+  .instruction-card img {
+    width: 25%;
+  }
+
+  .instruction-card h4 {
+    font-size: 14px;
+  }
+
+  .instruction-card p {
+    font-size: 12px;
+  }
+
+  .result .section-result,
+  .result .section-solution {
+    font-size: 16px;
+  }
+
+  .result p {
+    font-size: 13px;
+  }
+
+  #message-container {
+    width: 200px;
+    top: 70px;
+    right: 10px;
+  }
+
+  .message {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .message i {
+    font-size: 14px;
+  }
+}
