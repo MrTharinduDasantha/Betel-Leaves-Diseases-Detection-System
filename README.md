@@ -7,28 +7,28 @@ A comprehensive web-based platform for identifying betel leaf diseases and provi
 
 Click the link below to see the demonstration of the Betel Leaf Disease Detection and Solution System.
 
-Link 👉 https://drive.google.com/file/d/1CLe_hFuexZz6_2FP0f82Rv3npHdK6lj5/view?usp=sharing 👈
+Link 👉 https://drive.google.com/file/d/1hXE7sjyQ6cHozu543nHzzvixdRxTE6cD/view?usp=sharing 👈
 
 
 ## Features
 
 ### Farmer
-- Disease Detection: Upload betel leaf images to identify diseases (Bacterial Leaf Spot, Fungal Brown Spot, Dried Leaf, Healthy)
-- Cultivation Guides: Access detailed cultivation guides with similar functionality
-- Community Forum: Post questions, share experiences, and interact with other farmers
-- Real-time Chat: Consult with agricultural officers directly
-- Personalized Dashboard: Track activities and notifications
+- Disease Detection: Upload betel leaf images to identify diseases (Bacterial Leaf Spot, Fungal Brown Spot, Dried Leaf, Healthy).
+- Cultivation Guides: Access detailed cultivation guides with similar functionality.
+- Community Forum: Post questions, share experiences, and interact with other farmers.
+- Real-time Chat: Consult with agricultural officers directly.
+- Personalized Dashboard: Track activities and notifications.
 
 ### Agricultural Officer
-- Solution Management: Add/update disease solutions and treatment recommendations
-- Content Creation: Publish cultivation guides with rich text formatting
-- Expert Consultation: Provide real-time advice to farmers via chat
-- Community Moderation: Engage in forum discussions and provide expert insights
+- Solution Management: Add/update disease solutions and treatment recommendations.
+- Content Creation: Publish cultivation guides with rich text formatting.
+- Expert Consultation: Provide real-time advice to farmers via chat.
+- Community Moderation: Engage in forum discussions and provide expert insights.
 
 ### Authentication & Access Control
-- Role-based Access: Separate interfaces for farmers and agricultural officers
-- Secure Registration: Profile-based registration with image upload
-- Session Management: Secure login/logout functionality
+- Role-based Access: Separate interfaces for farmers and agricultural officers.
+- Secure Registration: Profile-based registration with image upload.
+- Session Management: Secure login/logout functionality.
 
 
 ## Technologies Used
@@ -112,13 +112,13 @@ The CNN model achieves the following performance on test data:
 
 ## Database Schema
 The application uses MongoDB with the following collections:
-- <mark>users</mark> - User profiles and authentication
-- <mark>solutions</mark> - Disease solutions and treatments
-- <mark>cultivation_guides</mark> - Educational content
-- <mark>posts</mark> - Community forum posts
-- <mark>messages</mark> - Real-time chat messages
-- <mark>notifications</mark> - User notifications
-- <mark>testimonials</mark> - User testimonials
+- users - User profiles and authentication
+- solutions - Disease solutions and treatments
+- cultivation_guides - Educational content
+- posts - Community forum posts
+- messages - Real-time chat messages
+- notifications - User notifications
+- testimonials - User testimonials
 
 ## Real-time Features
 - Live chat between farmers and officers
@@ -127,7 +127,7 @@ The application uses MongoDB with the following collections:
 - Live post interactions (likes, comments)
 
 ## Contact
-For technical support, You can contact me at <mark>tharindudasantha2001e@gmail.com</mark>.
+For technical support, You can contact me at tharindudasantha2001e@gmail.com.
 
 ## Screenshots
 
