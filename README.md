@@ -140,9 +140,9 @@ For technical support, You can contact me at <mark>tharindudasantha2001e@gmail.c
 ![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%207.png)
 ![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%208.png)
 ![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%209.png)
-![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%210.png)
-![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%211.png)
-![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%212.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/cbfdd1f5e83e7a2de98ae10ab0530deca4a4311e/Img%20-%2010.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/cbfdd1f5e83e7a2de98ae10ab0530deca4a4311e/Img%20-%2011.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/cbfdd1f5e83e7a2de98ae10ab0530deca4a4311e/Img%20-%2012.png)
 ![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%2013.png)
 ![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%2014.png)
 
