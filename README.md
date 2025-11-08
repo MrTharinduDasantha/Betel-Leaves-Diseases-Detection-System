@@ -131,7 +131,20 @@ For technical support, You can contact me at <mark>tharindudasantha2001e@gmail.c
 
 ## Screenshots
 
-
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%201.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%202.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%203.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%204.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%205.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%206.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%207.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%208.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%209.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%210.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%211.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%212.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%2013.png)
+![image alt](https://github.com/MrTharinduDasantha/Betel-Leaves-Diseases-Detection-System/blob/f6e4371834d276fc89c93b792c8662f7f985ee26/Img%20-%2014.png)
 
 <h4 align="center"> Don't forget to leave a star ⭐️ </h4>
 
